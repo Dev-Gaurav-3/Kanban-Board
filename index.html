@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/183e827761.js" crossorigin="anonymous"></script>
+    <title>Kanban Board</title>
+</head>
+<body>
+
+    <div class="header">
+        <h2>Kanban</h2>
+        <button class="btn addNewTaskBtn">Add New</button>
+    </div>
+    <div class="main">
+        <div class="section todo" id="todo">
+            <div class="heading">
+                <h3>To-Do</h3>
+                <h3 id = "count">0</h3>
+            </div>
+        </div>
+        <div class="section inprogress" >
+            <div class="heading">
+                <h3>In-Progress</h3>
+                <h3 id = "count">0</h3>
+            </div>
+        </div>
+        <div class="section done">
+            <div class="heading">
+                <h3>Done</h3>
+                <h3 id = "count">0</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal">
+            <div class="center">
+                <input type="text" placeholder="Task Title" id="task-title">
+                <textarea placeholder="Task Description" id = "task-description"></textarea>
+                <button class="btn submit">Add</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

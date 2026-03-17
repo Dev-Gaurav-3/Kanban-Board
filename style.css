@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+ :root{
+
+    --bg-primary-color: rgb(42, 42, 42);
+    --bg-fill-color: #fdfdfc;
+    --text-primary-color: rgb(255, 255, 255);
+    --bg-food-color:rgb(255, 159, 159);
+    --bg-section-color:rgba(15, 14, 14, 0.298);
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 48px;
+
+
+    --border-primary-color:#333333;
+
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --border-radius-2xl: 24px;
+} 
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    user-select: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    padding: var(--space-sm) var(--space-md);
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--border-primary-color);
+    position: sticky;
+    top: 0;
+    background-color: black;
+}
+
+.btn{
+    border: none;
+    background-color: var(--bg-fill-color);
+    color: var(--bg-primary-color);
+    padding: var(--space-sm) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.main{
+    display: flex;
+    flex-grow: 1;
+    padding: var(--space-sm) var(--space-sm);
+    gap: var(--space-md);
+}
+
+.main .section{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    border: 3px solid var(--border-primary-color);
+    background-color: var(--bg-section-color);
+    overflow: hidden;
+    border-radius: var(--border-radius-sm);
+    gap: var(--space-sm);
+    transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.main .section .heading{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-sm);
+    background-color: black;
+}
+.task{
+    background-color: var(--bg-primary-color);
+    padding: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    margin: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: grab;
+}
+
+.task .top p {
+    font-size: 0.9rem;
+    max-width: fit-content;
+    color: #ccc;
+    margin-top: var(--space-xs);    
+}
+
+.delete{
+    font-size: 16px;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete:hover{
+    transform: scale(1.1);
+    color: #ff6b6b;
+}
+
+.hover-over{
+    border: 2px dashed var(--bg-fill-color) !important;
+    transform: scale(1.03);
+}
+.modal{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        background: rgba(15,14,14,0.3);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal .center{
+    background-color: var(--bg-primary-color);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    z-index: 10;
+}
+.modal .center input , .modal .center textarea , .modal .center select{
+    background-color: var(--border-primary-color);
+    color: var(--bg-fill-color);
+    border: none;
+    outline: none;
+    padding: var(--space-sm);
+    border-radius: var(--border-radius-sm);
+}
+
+.done .task h2,
+.done .task p {
+    text-decoration: line-through;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.hover-over {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 2px dashed #ccc;
+}
