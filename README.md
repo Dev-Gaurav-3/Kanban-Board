@@ -28,5 +28,5 @@ To-Do, In Progress, and Done.
 ## 📌 Future Improvements
 
 * Persist tasks using localStorage
-* Add edit/delete functionality
+* Add edit functionality
 * User authentication
