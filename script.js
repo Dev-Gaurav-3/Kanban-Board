@@ -13,7 +13,7 @@ if (localStorage.getItem("tasks")) {
     const data = JSON.parse(localStorage.getItem("tasks"));
 
     for (const colClass in data) {
-        const column = document.querySelector(`.${colClass}`);
+        const column = document.querySelector(`${colClass}`);
         if (column) {
             data[colClass].forEach(task => {
                 createTaskElement(task.title, task.desc, column);
