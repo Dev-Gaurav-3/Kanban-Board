@@ -13,11 +13,11 @@ if (localStorage.getItem("tasks")) {
     const data = JSON.parse(localStorage.getItem("tasks"));
 
     for (const colClass in data) {
-        const column = document.querySelector(`${colClass}`);
+        const column = document.querySelector(`.${colClass}`);
         if (column) {
             data[colClass].forEach(task => {
                 createTaskElement(task.title, task.desc, column);
-                if(column === 'done'){
+                if(column === "done"){
                     task.title.classList.add("strike");
                 }
             });
@@ -60,6 +60,7 @@ function createTaskElement(title, desc, column) {
     });
 
     column.appendChild(template);
+    return template;
 };
 function updateUI() {
     const columns = ['todo', 'inprogress', 'done'];
@@ -70,7 +71,7 @@ function updateUI() {
         const tasksInCol = columnEl.querySelectorAll(".task");
         
         // Update the count span
-        const countSpan = columnEl.querySelector("#count");
+        const countSpan = columnEl.querySelector(".count");
         if (countSpan) countSpan.textContent = tasksInCol.length;
 
         // Collect data for storage
